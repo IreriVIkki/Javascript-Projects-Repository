@@ -26,6 +26,8 @@ $(document).ready(function () {
         }
     };
 
+
+
   // jQuery user interface logic
     $("form#leap-year").submit(function (event) {
         event.preventDefault();
