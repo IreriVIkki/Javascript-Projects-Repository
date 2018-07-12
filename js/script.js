@@ -44,7 +44,6 @@ $(document).ready(function () {
             var joinVowels = charArray.join('')
             newWordsArray.push(joinVowels)
 
-
         
         }else if(charArray[0]=== 'q' && charArray[1] === 'u'){
             charArray.splice(0,2);
@@ -74,6 +73,111 @@ $(document).ready(function () {
 
     console.log(newWordsArray)
 
+    // Grocery List Project
+
+    //  business logic
+
+    // var shoppingList = ['cabbage', '  tomato', 'garlic', 'spinach', 'carrots', 'fruits']
+
+    // console.log(groceries)
+
+    function outputGroceries (groceries){
+        var ouputArray = []
+        for (var index = 0; index < groceries.length; index++) {
+            var upper = groceries[index].toUpperCase().trim()
+            ouputArray.push(upper)
+        }
+        var finalArray = ouputArray.sort()
+        // console.log(finalArray)
+        return finalArray
+    };
+
+
+    $('#Submit').click(function(event){
+        console.log('asdfafd');
+            $('#my-form').submit(function (event) {
+                var output = $('textarea').val()
+                $('#print').text(output)
+            })
+        event.preventDefault()
+    });
+
+//  **************************************************************
+
+    // business logic
+
+
+    //  calculator
+    var inputNumber1 = 6
+    var inputNumber2 = 3
+
+    //  addition function
+
+    function add(num1 , num2){
+        var result = num1 + num2;
+        return result;
+    };
+    // multiplication function
+
+    function multiply(numb1 , numb2){
+    var results = numb1 * numb2;
+    return results;
+    }
+    //division function
+    function divide(numbs1 , numbs2){
+        var success = numbs1 / numbs2;
+        return success;
+    }
+    //  subtraction function
+
+    function subtract(numb1 , numb2){
+        var outcome = numb1 - numb2;
+        return outcome;
+    }
+
+    console.log(add(inputNumber1, inputNumber2))
+    console.log(subtract(inputNumber1, inputNumber2))
+    console.log(multiply(inputNumber1,inputNumber2))
+    console.log(divide(inputNumber1,inputNumber2))
+
+    //  user logic
+
+    $('#calcForm').submit(function(event){
+        event.preventDefault()
+
+        var firstNumber = parseFloat($('#firstNumber').val())
+        var secondNumber = parseFloat($('#secondNumber').val())
+
+        $('#add').click(function(){
+            $('#calcResults').text(add(firstNumber, secondNumber))
+        })
+
+        $('#subtract').click(function(){
+            $('#calcResults').text(subtract(firstNumber,secondNumber))
+        })
+
+        $('#multiply').click(function(){
+            $('#calcResults').text(multiply(firstNumber,secondNumber))
+        })
+
+        $('#divide').click(function(){
+            $('#calcResults').text(divide(firstNumber,secondNumber))
+        })
+
+    });
 });
 
- 
+//  ***************************************************************
+
+
+    // numbers = '41'
+    // rom = ""
+
+    // console.log(+numbers)
+
+    // var xxx = toRomanNumbers(numbers)
+    // console.log(xxx)
+
+    // outputGroceries(shoppingList);
+
+    // user logic
